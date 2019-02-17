@@ -2,7 +2,7 @@
 	"targets": {
 		"windows":{
 			"buildenv": "xenial-amd64",
-			"builddeps": ["zip"],
+			"builddeps": ["zip","wget"],
 			"buildcmd": [
 				"zip -r game.love .",
 				"mkdir build",
