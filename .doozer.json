@@ -5,21 +5,18 @@
 			"builddeps": ["zip","wget"],
 			"buildcmd": [
 				"zip -r game.love .",
-				"mkdir build",
-				"mv game.love build",
-				"cd build",
+				"mkdir ./build",
+				"mv ./game.love ./build",
 				"wget https://bitbucket.org/rude/love/downloads/love-11.2-win64.zip",
-				"unzip love-11.2-win64.zip",
-				"mv ./love-11.2.0-win64 ./game",
-				"mv game.love game",
-				"cd game",
-				"cat love.exe game.love > game.exe",
-				"mv game.love ..",
-				"rm love.exe lovec.exe love.ico game.ico game.love readme.txt changes.txt license.txt",
-				"cd ..",
-				"zip -r game.zip game"
+				"unzip ./love-11.2-win64.zip",
+				"mv ./love-11.2.0-win64 ./game"
+				"mv ./love-11.2.0-win64 ./build/",
+				"cp ./game.love ./build/game/",
+				"cat ./build/game/love.exe ./build/game/game.love > ./build/game/game.exe",
+				"rm ./build/game/love.exe ./build/game/lovec.exe ./build/game/love.ico ./build/game/game.ico ./build/game/game.love ./build/game/readme.txt ./build/game/changes.txt ./build/game/license.txt",
+				"zip -r ./game.zip ./build/game"
 			],
-			"artifacts":["build/game.zip","build/game.love"]
+			"artifacts":["build/game.zip","game.love"]
 		},
 	}
 }
