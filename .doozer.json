@@ -11,7 +11,7 @@
 				"unzip ./love-11.2-win64.zip",
 				"mv ./love-11.2.0-win64 ./game",
 				"mv ./game ./build/",
-				"cp ./game.love ./build/game/",
+				"cp ./build/game.love ./build/game/",
 				"cat ./build/game/love.exe ./build/game/game.love > ./build/game/game.exe",
 				"rm ./build/game/love.exe ./build/game/lovec.exe ./build/game/love.ico ./build/game/game.ico ./build/game/game.love ./build/game/readme.txt ./build/game/changes.txt ./build/game/license.txt",
 				"zip -r ./game.zip ./build/game"
