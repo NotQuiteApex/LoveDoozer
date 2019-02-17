@@ -9,7 +9,7 @@
 				"mv ./game.love ./build",
 				"wget https://bitbucket.org/rude/love/downloads/love-11.2-win64.zip",
 				"unzip ./love-11.2-win64.zip",
-				"mv ./love-11.2.0-win64 ./game"
+				"mv ./love-11.2.0-win64 ./game",
 				"mv ./love-11.2.0-win64 ./build/",
 				"cp ./game.love ./build/game/",
 				"cat ./build/game/love.exe ./build/game/game.love > ./build/game/game.exe",
