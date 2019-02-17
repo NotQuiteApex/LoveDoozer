@@ -11,9 +11,10 @@
 				"wget https://bitbucket.org/rude/love/downloads/love-11.2-win64.zip",
 				"unzip love-11.2-win64.zip",
 				"mv ./love-11.2.0-win64 ./game",
-				"cp game.love game",
+				"mv game.love game",
 				"cd game",
 				"cat love.exe game.love > game.exe",
+				"mv game.love ..",
 				"rm love.exe lovec.exe love.ico game.ico game.love readme.txt changes.txt license.txt",
 				"cd ..",
 				"zip -r game.zip game"
