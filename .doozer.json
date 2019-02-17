@@ -14,9 +14,10 @@
 				"cp ./build/game.love ./build/game/",
 				"cat ./build/game/love.exe ./build/game/game.love > ./build/game/game.exe",
 				"rm ./build/game/love.exe ./build/game/lovec.exe ./build/game/love.ico ./build/game/game.ico ./build/game/game.love ./build/game/readme.txt ./build/game/changes.txt ./build/game/license.txt",
-				"zip -r ./game.zip ./build/game"
+				"mv ./build/game/game.love ./build/",
+				"zip -r ./build/game.zip ./build/game"
 			],
-			"artifacts":["build/game.zip","game.love"]
+			"artifacts":["build/game.zip","build/game.love"]
 		},
 	}
 }
