@@ -1,0 +1,24 @@
+{
+	"targets": {
+		"windows":{
+			"buildenv": "xenial-amd64",
+			"builddeps": ["zip"],
+			"buildcmd": [
+				"zip -r game.love .",
+				"mkdir build",
+				"mv game.love build",
+				"cd build",
+				"wget https://bitbucket.org/rude/love/downloads/love-11.2-win64.zip",
+				"unzip love-11.2-win64.zip",
+				"mv ./love-11.2-win64 ./game",
+				"cp game.love game",
+				"cd game",
+				"cat love.exe game.love > game.exe",
+				"rm love.exe lovec.exe love.ico game.ico game.love readme.txt changes.txt license.txt",
+				"cd ..",
+				"zip -r game.zip game"
+			],
+			"artifacts":["build/game.zip","build/game.love"]
+		},
+	}
+}
