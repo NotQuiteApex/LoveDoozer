@@ -1,23 +1,50 @@
 {
 	"targets": {
-		"windows":{
+		"win32":{
 			"buildenv": "xenial-amd64",
 			"builddeps": ["zip","wget"],
 			"buildcmd": [
-				"zip -r game.love .",
+				"zip -r GAME.love .",
 				"mkdir ./build",
-				"mv ./game.love ./build",
+				"mv ./GAME.love ./build",
+				"wget https://bitbucket.org/rude/love/downloads/love-11.2-win32.zip",
+				"unzip ./love-11.2-win32.zip",
+				"mv ./love-11.2.0-win32 ./GAME",
+				"mv ./GAME ./build/",
+				"mv ./build/GAME.love ./build/GAME/",
+				"cat ./build/GAME/love.exe ./build/GAME/GAME.love > ./build/GAME/GAME.exe",
+				"rm ./build/GAME/love.exe ./build/GAME/lovec.exe ./build/GAME/love.ico ./build/GAME/game.ico ./build/GAME/GAME.love ./build/GAME/readme.txt ./build/GAME/changes.txt ./build/GAME/license.txt",
+				"mv ./build/GAME ./",
+				"zip -r ./build/GAME-win32.zip ./GAME"
+			],
+			"artifacts":["build/GAME-win32.zip"]
+		},
+		"win64":{
+			"buildenv": "xenial-amd64",
+			"builddeps": ["zip","wget"],
+			"buildcmd": [
+				"zip -r GAME.love .",
+				"mkdir ./build",
+				"mv ./GAME.love ./build",
 				"wget https://bitbucket.org/rude/love/downloads/love-11.2-win64.zip",
 				"unzip ./love-11.2-win64.zip",
-				"mv ./love-11.2.0-win64 ./game",
-				"mv ./game ./build/",
-				"cp ./build/game.love ./build/game/",
-				"cat ./build/game/love.exe ./build/game/game.love > ./build/game/game.exe",
-				"rm ./build/game/love.exe ./build/game/lovec.exe ./build/game/love.ico ./build/game/game.ico ./build/game/game.love ./build/game/readme.txt ./build/game/changes.txt ./build/game/license.txt",
-				"mv ./build/game ./",
-				"zip -r ./build/game.zip ./game"
+				"mv ./love-11.2.0-win64 ./GAME",
+				"mv ./GAME ./build/",
+				"mv ./build/GAME.love ./build/GAME/",
+				"cat ./build/GAME/love.exe ./build/GAME/GAME.love > ./build/GAME/GAME.exe",
+				"rm ./build/GAME/love.exe ./build/GAME/lovec.exe ./build/GAME/love.ico ./build/GAME/game.ico ./build/GAME/GAME.love ./build/GAME/readme.txt ./build/GAME/changes.txt ./build/GAME/license.txt",
+				"mv ./build/GAME ./",
+				"zip -r ./build/GAME-win64.zip ./GAME"
 			],
-			"artifacts":["build/game.zip","build/game.love"]
+			"artifacts":["build/GAME-win64.zip"]
+		},
+		"love":{
+			"buildenv": "xenial-amd64",
+			"builddeps": ["zip"],
+			"buildcmd": [
+				"zip -r GAME.love ."
+			],
+			"artifacts":["GAME.love"]
 		},
 	}
 }
