@@ -1,5 +1,5 @@
 # LÖVE Doozer
-A Continuous Integration script for automatically building your LÖVE projects.
+A Continuous Integration script for automatically building your LÖVE projects. See it in action here: https://doozer.io/notquiteapex/LoveDoozer
 
 I made this during the LÖVE Jam 2019 so that my team members could test out what I had made without me having to constantly make builds for every change I made.
 
